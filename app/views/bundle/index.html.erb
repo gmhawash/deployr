@@ -1,0 +1,7 @@
+<ul>
+  <%- @bundles.each do |bundle| %>
+    <li><%= bundle.name %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'New bundle', '/bundle/new', class: 'pure-button pure-button-primary' %>

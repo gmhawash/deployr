@@ -1,0 +1,9 @@
+<% form_for @bundle, '/bundle/create', class: "pure-form pure-form-aligned" do |f| %>
+  <fieldset>
+    <div class="pure-control-group">
+      <label for="name">Bundle Name</label>
+      <%= f.text_field :name, placeholder: 'Bundle Name' %>
+    </div>
+    <%= f.submit class:"pure-button pure-button-primary" %>
+</fieldset>
+<% end %>
