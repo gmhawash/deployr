@@ -1,7 +1,12 @@
+require 'json'
+
 Deployr::App.controllers :bundle do
-  get :index do
+  get :index, provides: [:html, :json] do
     @bundles = Bundle.all
-    render 'bundle/index'
+    case content_type
+    when :html then render 'bundle/index'
+    when :json then json @bundles
+    end
   end
 
   get :new do
@@ -9,9 +14,9 @@ Deployr::App.controllers :bundle do
     render 'bundle/new'
   end
 
-  get :edit do
+  get :edit, with: :id do
     @bundle = Bundle.new
-    render 'bundle/new'
+    render 'bundle/edit'
   end
 
   post :create do

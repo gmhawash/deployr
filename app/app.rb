@@ -5,6 +5,8 @@ module Deployr
     register Padrino::Helpers
     require 'simple_form'
 
+    helpers Sinatra::JSON
+
     enable :sessions
 
     layout  :application # Layout can be in views/layouts/foo.ext or views/foo.ext (default :application)

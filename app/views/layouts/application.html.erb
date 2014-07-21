@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app='deployrApp'>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,8 @@
             <a class="pure-menu-heading" href="#">Deployer</a>
             <ul>
                 <li class="menu-item-divided pure-menu-selected">
-                    <a href="#">Packages</a>
+                    <a href="/bundle">Configure</a>
+                    <a href="/deployment">Deploy</a>
                 </li>
             </ul>
         </div>
@@ -41,12 +42,7 @@
     </div>
 </div>
 
-
-
-
-
-<script src="js/ui.js"></script>
-
+<%= javascript_include_tag 'jquery', 'jquery-ujs', 'ui', 'angular.min', 'bundleController' %>
 
 </body>
 </html>
